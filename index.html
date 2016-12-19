@@ -3,7 +3,7 @@
 <head>
     <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
 </head>
-<body ng-app = "demoapp">
+<body ng-app = "demoapp" ng-init = "countries = [{locale:'en-US',name:'United States'}, {locale:'en-GB',name:'United Kingdom'}, {locale:'en-FR',name:'France'}]">
     FIRST DEMO
     <div>
         <label>Name:</label>
@@ -24,5 +24,11 @@
             $scope.demovar.mail = "hey@gmail.com";
         });
     </script>
+    THIRD DEMO
+    <ol>
+        <li ng-repeat = "country in countries">
+            {{ 'Country: ' + country.name + ', Locale: ' + country.locale }}
+        </li>
+    </ol>
 </body>
 </html>
